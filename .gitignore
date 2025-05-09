@@ -1,0 +1,6 @@
+# Node modules
+**/node_modules/
+**/.cache/
+
+# SQLite database
+backend/logs.db
