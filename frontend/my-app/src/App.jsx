@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 const SITES = {
-  bilibili: 'https://www.bilibili.com/',
-  wikipedia: 'https://www.wikipedia.org/',
-  baidu: 'https://www.baidu.com/',
-  perplexity: 'https://www.perplexity.ai/'
+  google: 'https://www.google.com/',
+  bing: 'https://www.bing.com/',
+  perplexity: 'https://www.perplexity.ai/',
+  you: 'https://you.com/'
 };
 
 export default function App() {
-  const [site, setSite] = useState(SITES.bilibili);
+  const [site, setSite] = useState(SITES.google);
   const sessionId = useRef('user_' + Math.floor(Math.random() * 100000));
 
   useEffect(() => {
@@ -39,10 +39,10 @@ export default function App() {
     <div>
       <h2>Select a Search Platform</h2>
       <select onChange={e => setSite(SITES[e.target.value])}>
-        <option value="bilibili">Bilibili</option>
-        <option value="wikipedia">Wikipedia</option>
-        <option value="baidu">Baidu</option>
+        <option value="google">Google</option>
+        <option value="bing">Bing</option>
         <option value="perplexity">Perplexity</option>
+        <option value="you">You.com</option>
       </select>
       <iframe
         src={site}
